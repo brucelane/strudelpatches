@@ -1,6 +1,7 @@
-// dnb
+// dnb + dj_dave___ (instagram.com/dj_dave___)
 const lpf = slider(619.6,400,4000)
- 
+hi_elsewhere : note("f3 a3 d3 e3").decay(0.1).delay(1).sound("square").lpf(lpf)._punchcard()
+// chops: s("airglow").clip(1).slice(16, "14|14|8|14")
 setcpm(36)
 
 $: sound("~ ~ sd ~ ~ ~ sd ~").sound("rolandmc303_sd").spiral().color("red")
