@@ -1,0 +1,27 @@
+setcpm(170/4)
+samples('github:switchangel/breaks')
+samples('github:switchangel/pad')
+samples('github:tidalcycles/uzu-drumkit')
+_$: sound("bd hh hh hh hh hh hh hh oh").spiral().color("green")
+
+  _$: arrange(
+  [3, "d2 f3 g3 c4 d4 d2 f3 g3 c4"]
+).note().sound("gm_electric_guitar_jazz").spiral().color("yellow")
+
+  _$: arrange(
+  [3, "d2@4 ~ ~ ~ ~ "],  
+  [1, "d2@4 ~ ~ ~ d2 "],   
+  [1, "e2 f2@4 ~ ~ ~ "],  
+  [2, "f2@4 ~ ~ ~ ~ "],   
+  [1, "f2@4 ~ ~ ~ f2 "],   
+  [1, "e2 d2@4 ~ ~ ~ "],
+).note().sound("gm_electric_bass_finger").spiral().color("magenta")
+
+_$drums: stack(
+  s("bd:1").beat("0,7?,10",16).duck("3"),
+  s("sd:2").beat("4,12",16),
+  s("hh:4!8")
+  
+  )
+  // .rib(0,1/4)
+ 
