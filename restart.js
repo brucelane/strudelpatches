@@ -4,6 +4,12 @@ register('rlpf', (x,pat) => {return pat.lpf(pure(x).mul(12).pow(4))})
 setcpm(150/4)
 const lpf = slider(0,0,40)
 
+
+_$: n("<0 6 10 13 4>*16".add(24))
+  .scale("d:phrygian").pan(rand)
+  .delay(.5).gain(1).o(5).dec(.1)
+  .s("triangle")
+
 $yo : note("<7@4 15@2 10@2>".add(24))
   .detune(.7)
   .s("supersaw")
@@ -12,3 +18,8 @@ $yo : note("<7@4 15@2 10@2>".add(24))
 
 $: note("<g4 f4 d5 g4 g4 f4 d5 g4 g4!2 d5 g4 g4 f4 d5 d#5>").s("piano").delay(.6).rel(2)
 
+$: n("<<14 [29 _ _ 19]>@3 22@4 26>".add(36))
+  .detune(.7).pwrate(.3).room(1).roomsize(3)
+  .s("pulse").rlpf(slider(0.475))
+.fm("2.03").fmh(2.01)
+  .diode("1:.5").o(4)
